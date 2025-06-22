@@ -35,9 +35,12 @@ Widget createDeffaultThumb(
       child: Align(
           alignment: Alignment.centerRight,
           child: Container(
+              decoration: BoxDecoration(
+                color: thumbColor.resolve(widgetStates),
+                borderRadius: BorderRadius.circular(thickness / 2),
+              ),
               height: isVertical ? length : thickness,
-              width: isVertical ? thickness : length,
-              color: thumbColor.resolve(widgetStates))));
+              width: isVertical ? thickness : length,)));
 }
 
 Widget createSemicircleThumb(
