@@ -29,6 +29,8 @@ class DefaultExampleMainScreen extends StatelessWidget {
       appBar: AppBar(title: const Center(child: Text("Default Example"))),
       body: SafeArea(
         child: ScrollbarUltima(
+          minDynamicThumbLength: 50,
+          maxDynamicThumbLength: 100,
           child: ListView.builder(itemCount: 100, itemBuilder: _buildItem),
         ),
       ),

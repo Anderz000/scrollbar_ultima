@@ -33,7 +33,7 @@ Widget createDeffaultThumb(
   return SlideTransition(
       position: thumbOffsetAnimation,
       child: Align(
-          alignment: Alignment.centerRight,
+          alignment: _getThumbAlignment(scrollbarPosition),
           child: Container(
               decoration: BoxDecoration(
                 color: thumbColor.resolve(widgetStates),
@@ -214,6 +214,19 @@ Alignment _getSemicircleLabelAlignment(ScrollbarPosition scrollBarPosition) {
       return Alignment.centerRight;
     case ScrollbarPosition.left:
       return Alignment.centerLeft;
+  }
+}
+
+Alignment _getThumbAlignment(ScrollbarPosition scrollbarPosition) {
+  switch (scrollbarPosition) {
+    case ScrollbarPosition.left:
+      return Alignment.topLeft;
+    case ScrollbarPosition.right:
+      return Alignment.topRight;
+    case ScrollbarPosition.top:
+      return Alignment.topLeft;
+    case ScrollbarPosition.bottom:
+      return Alignment.bottomLeft;
   }
 }
 
