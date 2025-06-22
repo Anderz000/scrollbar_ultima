@@ -54,6 +54,7 @@ class _ShowHideAnimatedState extends State<ShowHideAnimated>
   @override
   void dispose() {
     _unsubscribeFromShowHideAnimatedController();
+    _animationController.dispose();
 
     super.dispose();
   }
