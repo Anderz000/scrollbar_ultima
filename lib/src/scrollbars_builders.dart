@@ -33,7 +33,7 @@ Widget createDeffaultThumb(
   return SlideTransition(
       position: thumbOffsetAnimation,
       child: Align(
-          alignment: _getThumbAlignment(scrollbarPosition),
+          alignment: Alignment.center,
           child: Container(
               decoration: BoxDecoration(
                 color: thumbColor.resolve(widgetStates),
@@ -217,18 +217,6 @@ Alignment _getSemicircleLabelAlignment(ScrollbarPosition scrollBarPosition) {
   }
 }
 
-Alignment _getThumbAlignment(ScrollbarPosition scrollbarPosition) {
-  switch (scrollbarPosition) {
-    case ScrollbarPosition.left:
-      return Alignment.topLeft;
-    case ScrollbarPosition.right:
-      return Alignment.topRight;
-    case ScrollbarPosition.top:
-      return Alignment.topLeft;
-    case ScrollbarPosition.bottom:
-      return Alignment.bottomLeft;
-  }
-}
 
 class ArrowCustomPainter extends CustomPainter {
   Color color;
